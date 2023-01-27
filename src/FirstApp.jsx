@@ -1,21 +1,14 @@
-const newMessage = {
-    title:"Hello dude!",
-    name:"Diego"
-}
+import PropTypes from "prop-types";
 
-const getNameFromDB = () => {
-    return "Name"
-}
-
-const FirstApp = () => {
+export const FirstApp = ({title,subtitle}) => {
     return (
         <>
-            <h1>Hello world</h1>
-            {/*<code>{JSON.stringify(newMessage)}</code>*/}
-            {getNameFromDB()}
-            <p>Soy un parrafo</p>
+            <h1>{title}</h1>
+            <p>{subtitle}</p>
         </>
     );
 }
-
-export default FirstApp;
+FirstApp.propTypes = {
+    title:PropTypes.string.isRequired,
+    subtitle:PropTypes.number.isRequired,
+}
